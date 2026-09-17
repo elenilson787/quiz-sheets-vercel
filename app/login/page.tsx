@@ -22,6 +22,10 @@ export default function Login(){
         setM(d.error||'E-mail ou senha incorretos.');
         return;
       }
+      if(!d.data?.user){
+        setM('Login retornou uma resposta inesperada. Verifique as variáveis da Vercel e a implantação do Apps Script.');
+        return;
+      }
       localStorage.setItem('quiz_user',JSON.stringify(d.data.user));
       window.location.href='/quiz';
     }catch(err){
