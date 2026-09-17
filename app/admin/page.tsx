@@ -1,0 +1,1 @@
+import AdminQuestions from '@/components/AdminQuestions';export default function AdminPage(){return <main className="min-h-screen p-6"><AdminQuestions/></main>}
