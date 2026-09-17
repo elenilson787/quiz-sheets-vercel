@@ -1,4 +1,4 @@
-const CONFIG={SPREADSHEET_ID:'COLE_AQUI_O_ID_DA_PLANILHA',ADMIN_SECRET:'COLE_AQUI_UM_SEGREDO_FORTE'};
+const CONFIG={SPREADSHEET_ID:'1TBBPs2prVfvRC9xA-eaHSLkIjtVLgk4lmsE9iUhZgPk',ADMIN_SECRET:'COLE_AQUI_UM_SEGREDO_FORTE'};
 function doPost(e){try{const b=JSON.parse(e.postData.contents||'{}');return json({ok:true,data:route(b)})}catch(err){return json({ok:false,error:String(err.message||err)})}}
 function route(b){switch(b.action){case'setup':return setup();case'listQuestions':return listQuestions();case'register':return register(b);case'login':return login(b);case'adminListQuestions':checkAdmin(b);return rows('PERGUNTAS');case'adminCreateQuestion':checkAdmin(b);return createQuestion(b);case'adminDeleteQuestion':checkAdmin(b);return deleteQuestion(b.id);default:throw Error('Ação inválida.')}}
 function ss(){return SpreadsheetApp.openById(CONFIG.SPREADSHEET_ID)}function sh(n){return ss().getSheetByName(n)}
