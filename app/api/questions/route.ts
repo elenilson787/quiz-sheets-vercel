@@ -1,0 +1,2 @@
+import {NextResponse} from 'next/server';import {appsScript} from '@/lib/api';import type {Question} from '@/lib/types';
+export async function GET(){try{return NextResponse.json({ok:true,data:await appsScript<Question[]>('listQuestions')})}catch(e){return NextResponse.json({ok:false,error:String(e)},{status:500})}}
