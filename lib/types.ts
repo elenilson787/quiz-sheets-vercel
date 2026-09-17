@@ -1,0 +1,3 @@
+export type Question={id:string;pergunta:string;alternativaA:string;alternativaB:string;alternativaC:string;alternativaD:string;correta:'A'|'B'|'C'|'D';categoria:string;explicacao:string;ativa:boolean;criadoEm?:string};
+export type User={id:string;nome:string;email:string};
+export type Result={id:string;usuarioId:string;nome:string;categoria:string;pontos:number;total:number;percentual:number;criadoEm:string};
