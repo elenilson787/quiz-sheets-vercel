@@ -1,0 +1,1 @@
+import{NextResponse}from'next/server';import{appsScript}from'@/lib/api';export async function POST(req:Request){try{return NextResponse.json({ok:true,data:await appsScript('login',await req.json())})}catch(e){return NextResponse.json({ok:false,error:String(e)},{status:400})}}
